@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-security-demo
+  namespace: default
+  labels:
+    app: k8s-security-demo
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: k8s-security-demo
+  template:
+    metadata:
+      labels:
+        app: k8s-security-demo
+    spec:
+      containers:
+      - name: hello
+        image: "ironcore864/k8s-security-demo:root"
+        ports:
+          - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: k8s-security-demo
+  namespace: default
+spec:
+  selector:
+    app: k8s-security-demo
+  ports:
+    - port: 80
+      targetPort: 8080
