@@ -18,12 +18,9 @@ spec:
     spec:
       containers:
       - name: hello
-        image: ironcore864/k8s-security-demo:pod-as-non-root
+        image: ironcore864/k8s-security-demo:pod-as-root
         ports:
           - containerPort: 8080
-        securityContext:
-          runAsNonRoot: True
-          readOnlyRootFilesystem: True
 ---
 kind: Service
 apiVersion: v1
