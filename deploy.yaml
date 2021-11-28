@@ -23,6 +23,7 @@ spec:
           - containerPort: 8080
         securityContext:
           runAsNonRoot: True
+          readOnlyRootFilesystem: True
 ---
 kind: Service
 apiVersion: v1
