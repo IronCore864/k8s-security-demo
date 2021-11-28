@@ -9,4 +9,6 @@ WORKDIR /app
 COPY --from=build-env /go/src/github.com/ironcore864/k8s-security-demo/app /app/app
 CMD ["./app"]
 
+USER 1000:1000
+
 EXPOSE 8080/tcp
