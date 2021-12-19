@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+  namespace: namespace-b
+spec:
+  containers:
+  - name: curl
+    image: curlimages/curl 
+    command: [ "sleep", "600" ]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+  namespace: namespace-a
+spec:
+  containers:
+  - name: curl
+    image: curlimages/curl
+    command: [ "sleep", "600" ]
