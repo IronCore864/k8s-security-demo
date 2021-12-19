@@ -1,1 +1,9 @@
+# build binaries
 k8s-security-demo
+
+# Terraform
+.terraform
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+terraform.tfstate
+terraform.tfvars
