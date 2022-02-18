@@ -1,10 +1,10 @@
 module "network" {
   source = "./modules/networking"
-  
-  vpc_name        = "main"
-  vpc_cidr_block  = "10.0.0.0/16"
 
-  public_subnets  = {
+  vpc_name       = "main"
+  vpc_cidr_block = "10.0.0.0/16"
+
+  public_subnets = {
     "ap-southeast-1a" = "10.0.1.0/24"
     "ap-southeast-1b" = "10.0.2.0/24"
     "ap-southeast-1c" = "10.0.3.0/24"
